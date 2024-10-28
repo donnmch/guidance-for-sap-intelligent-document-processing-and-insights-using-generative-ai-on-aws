@@ -1,0 +1,12 @@
+specVersion: "3.2"
+metadata:
+  name: expenseapp
+type: application
+server:
+  customMiddleware:
+  - name: fiori-tools-proxy
+    afterMiddleware: compression
+    configuration:
+      backend:
+      - path: /sap
+        url: <protocol>://<saphostname>

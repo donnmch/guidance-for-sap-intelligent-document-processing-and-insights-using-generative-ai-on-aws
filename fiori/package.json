@@ -1,0 +1,42 @@
+{
+    "name": "expenseapp",
+    "version": "1.0.0",
+    "description": "Expense Application",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "ui5 build",
+        "deploy": "npm run build && fiori deploy --config ui5-deploy.yaml && rimraf archive.zip",
+        "undeploy": "fiori undeploy --config ui5-deploy.yaml",
+        "deploy-test": "npm run build && fiori deploy --config ui5-deploy.yaml --testMode true"
+    },
+    "author": "KK Ramadoss",
+    "license": "ISC",
+    "dependencies": {
+        "@sap/ux-ui5-tooling": "^1.12.4",
+        "@ui5/cli": "^3.9.1",
+        "package.json": "^2.0.1"
+    },
+    "ui5": {
+        "ui5parser": {
+            "ui5version": "1.114.0"
+        },
+        "ui5linter": {
+            "xmlClassExceptions": [
+                "sap.m.IllustratedMessage"
+            ],
+            "usage": {
+                "UnusedNamespaceLinter": false,
+                "UnusedMemberLinter": false,
+                "PublicMemberLinter": false
+            }
+        },
+        "dependencies": [
+            "ui5-task-flatten-library"
+        ]
+    },
+    "devDependencies": {
+        "rimraf": "^3.0.2",
+        "ui5-task-flatten-library": "0.2.5"
+    }
+}

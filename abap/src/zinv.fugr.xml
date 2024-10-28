@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Invoice function group</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZINVTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZINV</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZSEND_INVOICEDATA_S3</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Send Data to S3</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IE_FILENAME</PARAMETER>
+       <TYP>RLGRAP-FILENAME</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IE_PROFILE</PARAMETER>
+       <TYP>/AWS1/RT_PROFILE_ID</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IE_FILENAME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Local file for upload/download</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IE_PROFILE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Profile for accessing AWS APIs</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

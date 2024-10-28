@@ -1,0 +1,108 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:u="sap.ui.unified"
+    controllerName="aws.fin.ap.controllers.Master">
+    <Page title="Invoice App">
+        <customHeader>
+            <Bar>
+                <contentLeft>
+                    <Image
+                        src="{localresource>/path}/images/awslogo.png"
+                        width="40px"
+                        height="40px"/>
+                </contentLeft>
+                <contentMiddle>
+                    <Title
+                        text="{i18n>masterpageHeader}"
+                        titleStyle="H3"/>
+                </contentMiddle>
+               <contentRight>
+                <Button press="onSubscribeToAlertsButtonPress" 
+                        visible="{device>/system/phone}"
+                        icon="sap-icon://bell" tooltip="Subscribe to alerts" type="Attention"> </Button>
+               </contentRight>
+
+            </Bar>
+        </customHeader>
+       <SearchField ></SearchField>
+        <List
+            noDataText="{i18n>noInvoiceFound}"
+            items="{/Invoices}"
+            id="idInvoicesList"
+            selectionChange="onInvoicesListSelectionChange"
+            mode="SingleSelectMaster"
+            showNoData="false"
+            growing="true"
+            growingThreshold="6">
+            <headerToolbar>
+                <Toolbar visible="{masterView>/showheaderToolbar}">
+                    <u:FileUploader
+                        busy="{masterView>/busy}"
+                        busyIndicatorDelay="{masterView>/delay}"
+                        icon="sap-icon://add-photo"
+                        width="100%"
+                        buttonOnly="true"
+                        buttonText="Upload Additional Invoice"
+                        style="Emphasized"
+                        uploadUrl="/sap/opu/odata/sap/zinvoice_app_srv/InvoiceDocuments"
+                        change="onFileUploaderChange"
+                        uploadComplete="onFileUploaderUploadComplete"
+                        fileType="JPG,jpg,JPEG,jpeg,PNG,png,PDF,pdf,TIFF,tiff"/>
+                </Toolbar>
+            </headerToolbar>
+            <items>
+                <ObjectListItem
+                    intro="{i18n>lblInoviceNumber} {invoiceNumber}"
+                    title="{vendorName}"
+                    number="{path: 'inoviceAmount', formatter:'.formatter.formatNumber'}"
+                    numberUnit="USD"
+                    numberState="Information"/>
+            </items>
+        </List>
+        <List
+            id="idEmptyList"
+            visible="{masterView>/showCustomListItem}"
+            showNoData="false">
+            <items>
+
+                <CustomListItem>
+                  <content>
+                        <Bar>
+                            <contentMiddle >
+                                <u:FileUploader
+                                    busy="{masterView>/busy}"
+                                    busyIndicatorDelay="{masterView>/delay}"
+                                    icon="sap-icon://add-photo"
+                                    width="100%"
+                                    buttonOnly="true"
+                                    buttonText="Upload Invoice"
+                                    change="onFileUploaderChange"
+                                    uploadComplete="onFileUploaderUploadComplete"
+                                    style="Emphasized"
+                                    fileType="JPG,jpg,JPEG,jpeg,PNG,png,PDF,pdf,TIFF,tiff"
+                                    uploadUrl="/sap/opu/odata/sap/zinvoice_app_srv/InvoiceDocuments"/>
+                            </contentMiddle>
+                        </Bar>
+                    </content>
+             </CustomListItem>
+             <CustomListItem>
+                <content>
+                  
+                    <IllustratedMessage
+                        enableVerticalResponsiveness="true"
+                        illustrationSize="Spot"
+                        illustrationType="sapIllus-NoEntries"
+                        title="{i18n>illustrationTitle}"
+                        description="{i18n>illustrationDescription}"
+                        enableDefaultTitleAndDescription="false"/>
+                 
+                </content>
+            </CustomListItem>
+            </items>
+        </List>
+        <footer>
+            <Toolbar ></Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

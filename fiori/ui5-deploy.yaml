@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.2"
+metadata:
+  name: expenseapp
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        log: 3
+        target:
+          url: <protocol>://<saphostname>
+          client: "100"
+          auth: basic
+        credentials:
+          username: env:SAP_USER
+          password: env:SAP_PASSWORD          
+        app:
+          name: ZINVOICE_IDP
+          description: Intelligent Document Processing using AWS Textract
+          package: ZINV
+          transport: S4HK902647
+        exclude:
+          - /test/

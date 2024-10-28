@@ -1,0 +1,5 @@
+streamlit
+boto3 
+langchain_core
+langchain_community
+streamlit_cognito_auth

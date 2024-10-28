@@ -1,0 +1,2 @@
+sap.ui.define(["/aws/fin/ap/controllers/BaseController"],function(e){"use strict";return e.extend("aws.fin.app.controllers.Empty",{})});                                                                                                                       
+//# sourceMappingURL=Empty.controller.js.map                                                                                                                                                                                                                   

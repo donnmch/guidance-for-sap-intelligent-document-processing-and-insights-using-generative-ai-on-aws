@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_ZINVOICE_APP_DPC_EXT</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Data Provider Secondary Class</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>ANALYZE_INVOICE_TEXTRACT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Analyze Invoice Document</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONVERT_ITEMS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Convert Items to Entity Type</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CREATE_AUDIT_INDX</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Create Audit INDX</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_CURRENCY_FOR_EXPENSETYPE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Get Currency for Expense Type</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_OVERALL_SUMMARY_SCORE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Get Overall Average summary score</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_PROFILE_USER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Get SDK Profile based on User ID (AWS Account ID)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_VALUE_EXPENSETYPE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Get Value for Expense Type</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_BUKRS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Company Code</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_PROFILE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Profile for accessing AWS APIs</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_YEAR</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Fiscal Year</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>REMOVE_DUPLICATES_BY_SCORE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>remove duplicate expenses type by score</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>ANALYZE_INVOICE_TEXTRACT</CMPNAME>
+     <SCONAME>DUPLICATE_INVOICE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Duplicate invoice</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ANALYZE_INVOICE_TEXTRACT</CMPNAME>
+     <SCONAME>TEXTRACT_ERROR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Error occured while extracting data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_OVERALL_SUMMARY_SCORE</CMPNAME>
+     <SCONAME>RE_SCORE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Percent</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>POST_INVOICE</CMPNAME>
+     <SCONAME>EE_KEY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Accounting Document Number</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>POST_INVOICE</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Return Parameter</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_ITEM_TEXT</CMPNAME>
+     <SCONAME>IE_ITEM</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Numc3, internal use</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_ITEM_TEXT</CMPNAME>
+     <SCONAME>IE_KEY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Document Number of an Accounting Document</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SEND_NOTIFICATION</CMPNAME>
+     <SCONAME>IE_KEY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Document Number of an Accounting Document</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TRANSLATE_DESCRIPTION</CMPNAME>
+     <SCONAME>IE_ITEM</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Numc3, internal use</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TRANSLATE_DESCRIPTION</CMPNAME>
+     <SCONAME>IE_KEY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Document Number of an Accounting Document</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>
