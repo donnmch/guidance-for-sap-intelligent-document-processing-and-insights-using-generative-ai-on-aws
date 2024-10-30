@@ -25,7 +25,8 @@ from constructs import Construct
 
 class CdkStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
-        super().__init__(scope, construct_id, **kwargs)    
+        super().__init__(scope, construct_id, **kwargs)
+        self.template_options.description = "SAP Intelligent Document Processing and Insights Using Generative AI on AWS (SO9548)"
         platform_mapping = {
             "x86_64": ecs.CpuArchitecture.X86_64,
             "arm64": ecs.CpuArchitecture.ARM64
